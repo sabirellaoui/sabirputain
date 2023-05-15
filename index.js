@@ -25,7 +25,7 @@ theme.forEach(item => {
 
                 });
                 break;
-        } h
+        }
     });
 });
 /****************************************************************************** */
@@ -34,7 +34,7 @@ theme.forEach(item => {
 
 
 //formulairenew.addEventListener('submit', (event) => {
-  //  event.preventDefault();  // empêche la soumission du formulaire
+  //  event.preventDefault();  // empï¿½che la soumission du formulaire
   //  var inputtxt = document.getElementById("titre-projet").value
   //  var inputlien = document.getElementById("lien-projet").value
   //  console.log(inputtxt);
@@ -47,3 +47,10 @@ theme.forEach(item => {
 
  // }); 
 
+ var titre =document.querySelector("h1");
+ function fadein ()  {
+    
+    titre.classList.add("fade-in");
+    };
+window.addEventListener("load",fadein);
+   
