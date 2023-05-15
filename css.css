@@ -1,5 +1,105 @@
-div {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 16px;
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: snow;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+.carte__texte {
+    text-align: center;
+    s
+}
+
+
+
+
+
+.projet {
+    width: 80%;
+    margin: auto;
+}
+
+.cartes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/**l image va a la ligne si besoin**/
+
+
+.carte {
+    display: flex;
+    flex-direction: column;
+    align-item: center;
+    width: 30%;
+    border: 1px solid salmon;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.carte__texte {
+    text-align: center;
+}
+
+.formulaire {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(161, 72, 64);
+}
+
+.forumulairenew__input, .forumulairenew__textarea {
+    display: flex;
+    flex-direction: row;
+    margin: 1cm;
+}
+
+.forumulairenew__inputtext input {
+    margin-left: 10cm;
+    height: 1cmcm;
+}
+
+.forumulairenew__inputlien input {
+    margin-left: 10cm;
+    height: 1cmcm;
+}
+
+
+
+button {
+    width: 100px;
+    margin-left: 43.5%;
+}
+
+#black {
+    position: absolute;
+    background-color: black;
+    top: 1cm;
+    left: 1cm;
+    border-radius: 20px;
+    color: aliceblue;
+    width: 2cm;
+    text-align: center;
+}
+
+#salmon {
+    position: absolute;
+    border-radius: 20px;
+    background-color: blanchedalmond;
+    top: 2cm;
+    left: 1cm;
+    width: 2cm;
+    text-align: center;
+}
+
+.black {
+    background-color: black;
+    color: aliceblue;
+}
+
+.salmon {
+    background-color: blanchedalmond;
 }

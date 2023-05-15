@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title> Titre de la page </title>
-	</head>
-	<body>
-		<h1> Mon titre principal tro </h1>
-		<h3>je deteste les pauvres</h3>
-		<h2>je m'en fou des pauvres</h2>
-		<p> jos </p>
-	</body>
-	</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>projet</title>
+    <link rel="stylesheet" href="projet.css">
+</head>
+<body>
+
+    <section class="projet" id="projet">
+        <h1 class="projet__titre"> Premier projet</h1>
+
+        <section class="cartes" id="cartes">
+
+
+            <div class="carte">
+                <h3 class="carte__titre"> mon premier projet HP </h3>
+                <img class="carte__image" src="thumb2-hp-red-logo-4k-red-brickwall-hewlett-packard-hp-logo.jpg" />
+                <p class="carte__texte"> premier projet js avec HP</p>
+            </div>
+
+            <div class="carte">
+                <h3 class="carte__titre"> mon premier projet playstation </h3>
+                <img class="carte__image" src="thumb-playstation-red-logo-4k-red-brickwall-playstation-logo-brands.jpg" />
+                <p class="carte__texte"> premier projet js avec playstation </p>
+            </div>
+
+
+            <div class="carte">
+                <h3 class="carte__titre"> mon premier projet nasa </h3>
+                <img class="carte__image" src="thumb2-nasa-violet-logo-4k-violet-brickwall-nasa-logo-fashion-brands.jpg" />
+                <p class="carte__texte"> premier projet js avec nasa</p>
+            </div>
+
+            <div class="carte">
+                <h3 class="carte__titre"> mon premier projet audi </h3>
+                <img class="carte__image" src="thumb2-audi-golden-logo-cars-brands-artwork-brown-metal-background-creative.png" />
+                <p class="carte__texte"> premier projet js avec HP</p>
+            </div>
+
+            <div class="carte">
+                <h3 class="carte__titre"> mon premier projet HP </h3>
+                <img class="carte__image" src="illustration-amazon-logo-flat-design-simple-illustration-amazon-logo-flat-design-shadow-isolated-white-130102505.jpg" />
+                <p class="carte__texte"> premier projet js avec HP</p>
+            </div>
+
+        </section>
+
+
+        <section class="formulaire" id="formulaire">
+            <h3 class="formulaire__titre">
+                formulaire</h2>
+                <form class="formulairenew" id="formulairenew">
+                    <div class="forumulairenew__inputtext">
+                        <label for="titre-projet">
+                            entrer données texte
+                            <input type="text" name="titre-projet" id="titre-projet">
+                        </label>
+                    </div>
+                    <div class="forumulairenew__inputlien">
+                        <label for="lien-projet">
+                            entrer données lien
+                            <input type="text" name="lien-projet" id="lien-projet">
+                        </label>
+                    </div>
+                    <div class="forumulairenew__textarea">
+                        <label for="lien-projet">
+                            entrer données description
+                            </br>
+                            <textarea name="text-projet" id="text-projet" rows="10"></textarea>
+                        </label>
+                    </div>
+                    <button class="formulaire__bouton" type="submit">valider</button>
+                </form>
+        </section>
+        <div class="theme">
+            <div class="black" id="black"> Black</div>
+            <div class="salmon" id="salmon"> salmon </div>
+        </div>
+
+    </section>
+
+    <script src="projet.js"></script>
+
+</body>
+</html>
