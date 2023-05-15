@@ -3,6 +3,16 @@ body {
     background-color: snow;
 }
 
+#text-projet{
+     resize: none;
+width: 20rem;
+height: 5rem;
+}
+
+.center{
+    text-align: center;
+}
+
 h1 {
     text-align: center;
   opacity: 0;
@@ -64,20 +74,30 @@ h3 {
     background-color: rgb(161, 72, 64);
 }
 
-.forumulairenew__input, .forumulairenew__textarea {
+/* .forumulairenew__input, .forumulairenew__textarea {
     display: flex;
     flex-direction: row;
     margin: 1cm;
+} */
+
+.forumulairenew__textarea {
+    margin-top: 2rem;
 }
 
 .forumulairenew__inputtext input {
-    margin-left: 10cm;
-    height: 1cmcm;
+    margin-left: 1em;
+}
+.forumulairenew__inputtext{
+    text-align: center;
+    margin: 1em auto;
 }
 
+
 .forumulairenew__inputlien input {
-    margin-left: 10cm;
-    height: 1cmcm;
+    margin-left: 1em;
+}
+.forumulairenew__inputlien{
+    text-align: center;
 }
 
 
