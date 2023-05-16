@@ -1,12 +1,36 @@
-
-// const pauvres1 = document.querySelector('.pauvres1');
-// const fric1 = document.querySelector('.fric1');
-// const argent1 = document.querySelector('.argent1');
-// const argent2 = document.querySelector('.argent2');
 const form = document.querySelector('#formulairenew');
 const cardSection = document.querySelector('#cartes');
+const titre = document.querySelector("h1");
+const theme = document.querySelectorAll('.theme')
+const cartes = document.querySelectorAll('.carte');
 
-let newCards = [];
+theme.forEach(item => {
+    item.addEventListener('click', e => {
+        switch (e.target.id) {
+            case "black":
+                document.body.classList.add("black");
+                document.body.classList.remove("salmon");
+                cartes.forEach(carte => {
+                    carte.classList.add("black");
+                    carte.classList.remove("salmon");
+                });
+                break;
+
+            case "salmon":
+                document.body.classList.remove("black");
+                document.body.classList.add("salmon");
+                cartes.forEach(carte => {
+                    carte.classList.remove("black");
+                    carte.classList.add("salmon");
+                });
+                break;
+        }
+    });
+});
+
+window.addEventListener("load", ()=>{
+    titre.classList.add("fade-in");
+});
 
 
 form.addEventListener('submit', e =>{
@@ -18,32 +42,3 @@ form.addEventListener('submit', e =>{
                 <p class="carte__texte">${e.target['text-projet'].value}</p>
             </div>`)
 });
-
-
-// fric1.addEventListener('click', () => {
-//     console.log('clicked');
-//     let audio = document.querySelector(".mp3-fric1");
-//         audio.play();
-// });
-// pauvres1.addEventListener('click', () => {
-//     console.log('clicked');
-//     let audio = document.querySelector(".mp3-pauvres1");
-//         audio.play();
-// });
-// argent1.addEventListener('click', () => {
-//     console.log('clicked');
-//     let audio = document.querySelector(".mp3-argent1");
-//         audio.play();
-// });
-// argent2.addEventListener('click', () => {
-//     console.log('clicked');
-//     let audio = document.querySelector(".mp3-argent2");
-//         audio.play();
-// });
-
-
-
-
-
-
-
