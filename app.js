@@ -81,19 +81,22 @@ function cardCreator(title, link, text) {
         <h3 class="carte__titre center">${title}</h3>
         <img class="carte__image" src="${link}" />
         <p class="carte__texte center">${text}</p>
+        <i class="fa-solid fa-trash-can"></i>
     </div>
     `;
 };
 function deleteCard(event) {
-    // closest permet de choisir la carte qu on a cliqué la famille
-    const card = event.target.closest('.carte');
-    
     // si on tombe sur l element card (donc une carte)
-    if (card) {
+    // modifié => si on clique sur la poubelle
+    if (event.target.classList.contains('fa-trash-can')) {
+        // closest permet de choisir la carte qu on a cliqué la famille
+        // déplacé dans le if comme ca, si c'est pas le cas ca fait une opération de moins
+        const card = event.target.closest('.carte');
       // Supprimer la carte
       card.remove();
     }
   }
   
   // se declenche lorsqu'on clique dessus
-  document.addEventListener('click', deleteCard);
+  // modifié => uniquement sur la section cartes
+  cardSection.addEventListener('click', deleteCard);
