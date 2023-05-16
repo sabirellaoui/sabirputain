@@ -2,8 +2,11 @@ const body = document.querySelector('body');
 const form = document.querySelector('#formulairenew');
 const cardSection = document.querySelector('#cartes');
 const titre = document.querySelector("h1");
-const theme = document.querySelectorAll('.theme')
+const theme = document.querySelectorAll('.theme');
+// themed class on all element that follow the theme
+const themed = document.querySelectorAll('.themed');
 const cartes = document.querySelectorAll('.carte');
+
 
 // default card been put here
 const defaultCards = [
@@ -37,18 +40,14 @@ theme.forEach(item => {
     item.addEventListener('click', e => {
         switch (e.target.id) {
             case "black":
-                body.classList.add("black");
-                body.classList.remove("salmon");
-                cartes.forEach(carte => {
+                themed.forEach(carte => {
                     carte.classList.add("black");
                     carte.classList.remove("salmon");
                 });
                 break;
 
             case "salmon":
-                body.classList.remove("black");
-                body.classList.add("salmon");
-                cartes.forEach(carte => {
+                themed.forEach(carte => {
                     carte.classList.remove("black");
                     carte.classList.add("salmon");
                 });
@@ -77,7 +76,7 @@ form.addEventListener('submit', e =>{
 // returns a card html code => one place to change all cards
 function cardCreator(title, link, text) {
     return `
-    <div class="carte">
+    <div class="carte themed">
         <h3 class="carte__titre center">${title}</h3>
         <img class="carte__image" src="${link}" />
         <p class="carte__texte center">${text}</p>
