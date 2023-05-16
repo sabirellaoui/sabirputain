@@ -69,6 +69,9 @@ form.addEventListener('submit', e =>{
     
     // creates a new card each time we click on submit
     cardSection.insertAdjacentHTML("beforeend", cardCreator(e.target['titre-projet'].value,e.target['lien-projet'].value,e.target['text-projet'].value));
+
+    //empty form fields
+    e.target['titre-projet'].value = e.target['lien-projet'].value = e.target['text-projet'].value = '';
 });
 
 // returns a card html code => one place to change all cards
