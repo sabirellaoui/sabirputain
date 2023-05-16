@@ -14,7 +14,7 @@ height: 5rem;
 }
 
 h1 {
-    text-align: center;
+    /* text-align: center; */
   opacity: 0;
   transition: opacity 2s ease-in-out;
   font-size: 50px;
@@ -22,14 +22,14 @@ h1 {
     
 }
 
-h3 {
+/* h3 {
     text-align: center;
-}
+} */
 
-.carte__texte {
+/* .carte__texte {
     text-align: center;
     
-}
+} */
 
 
 
@@ -69,8 +69,7 @@ h3 {
 
 .formulaire {
     width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:auto;
     background-color: rgb(161, 72, 64);
 }
 
@@ -139,6 +138,5 @@ button {
 
 .fade-in {
     opacity: 1;
-
 }
 
