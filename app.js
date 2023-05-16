@@ -84,3 +84,16 @@ function cardCreator(title, link, text) {
     </div>
     `;
 };
+function deleteCard(event) {
+    // closest permet de choisir la carte qu on a cliqué la famille
+    const card = event.target.closest('.carte');
+    
+    // si on tombe sur l element card (donc une carte)
+    if (card) {
+      // Supprimer la carte
+      card.remove();
+    }
+  }
+  
+  // se declenche lorsqu'on clique dessus
+  document.addEventListener('click', deleteCard);

@@ -48,7 +48,7 @@ theme.forEach(item => {
  // }); 
 
  var titre =document.querySelector("h1");
- function fadein ()  {
+ function fadein () jj {
     
     titre.classList.add("fade-in");
     };
