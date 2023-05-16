@@ -5,7 +5,6 @@ const titre = document.querySelector("h1");
 const theme = document.querySelectorAll('.theme')
 const cartes = document.querySelectorAll('.carte');
 
-console.log(window);
 
 theme.forEach(item => {
     item.addEventListener('click', e => {
@@ -36,9 +35,12 @@ window.addEventListener("load", ()=>{
 });
 
 
+// executes the function when submitting the form
 form.addEventListener('submit', e =>{
+    // prevents form button from reloading the page
     e.preventDefault();
-    console.log(e, e.target['lien-projet'].value);
+    
+    // creates a new card each time we click on submit
     cardSection.insertAdjacentHTML("beforeend",`<div class="carte">
                 <h3 class="carte__titre">${e.target['titre-projet'].value}</h3>
                 <img class="carte__image" src="${e.target['lien-projet'].value}" />
