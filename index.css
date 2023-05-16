@@ -52,7 +52,7 @@ h3 {
 .carte {
     display: flex;
     flex-direction: column;
-    align-item: center;
+    /* align-item: center; */
     width: 30%;
     border: 1px solid salmon;
     border-radius: 10px;
