@@ -43,7 +43,7 @@ const interval = setInterval(function(){
         clearInterval(interval);
     }
 
-// durée avant que la fonction se repete (en ms)
+// durée avant que l'interval se repete (en ms)
 },400);
 
 
