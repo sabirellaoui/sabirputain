@@ -99,6 +99,19 @@ form.addEventListener('submit', e =>{
     // creates a new card each time we click on submit
     cardCreator(e.target['titre-projet'].value,e.target['lien-projet'].value,e.target['text-projet'].value);
 
+
+
+    
+
+    //idée de dev => le form ne fait rien si on submit alors que tout les champs sont vide
+    //idée de dev => ajout d'image aléatoire si rien n'est mis dans le champs lien
+    //idée de dev => on peut mettre des images aléatoire dans celles qu'on a ou aller chercher via API
+
+
+
+
+
+
     //empty form fields
     e.target['titre-projet'].value = e.target['lien-projet'].value = e.target['text-projet'].value = '';
 });
