@@ -32,9 +32,25 @@ link:'images/illustration-amazon-logo-flat-design-simple-illustration-amazon-log
 text:'premier projet js avec amazon'
     }];
 
-defaultCards.forEach(card => {
-    cardSection.insertAdjacentHTML("beforeend", cardCreator(card.title,card.link,card.text));
-});
+let cardFadeIn = 0;
+const interval = setInterval(function(){
+    cardSection.insertAdjacentHTML("beforeend", cardCreator(defaultCards[cardFadeIn].title,defaultCards[cardFadeIn].link,defaultCards[cardFadeIn].text));
+
+    setTimeout(()=>{
+        cardSection.lastElementChild.classList.add('fade');
+    },50);
+    
+    cardFadeIn++;
+    if(cardFadeIn == defaultCards.length){
+        clearInterval(interval);
+    }
+},400);
+
+
+
+// defaultCards.forEach(card => {
+//     cardSection.insertAdjacentHTML("beforeend", cardCreator(card.title,card.link,card.text));
+// });
 
 theme.forEach(item => {
     item.addEventListener('click', e => {

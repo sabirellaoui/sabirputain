@@ -59,6 +59,8 @@ h1 {
 
 
 .carte {
+    opacity:0;
+    transition: opacity 1s; 
     display: flex;
     flex-direction: column;
     /* align-item: center; */
@@ -146,6 +148,10 @@ button {
 }
 
 .fade-in {
+    opacity: 1;
+    transition: opacity 1s; 
+}
+.fade {
     opacity: 1;
 }
 
