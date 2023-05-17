@@ -32,25 +32,21 @@ link:'images/illustration-amazon-logo-flat-design-simple-illustration-amazon-log
 text:'premier projet js avec amazon'
     }];
 
+// fais apparaitre les default cards 1 après l'autre
 let cardFadeIn = 0;
 const interval = setInterval(function(){
-    cardSection.insertAdjacentHTML("beforeend", cardCreator(defaultCards[cardFadeIn].title,defaultCards[cardFadeIn].link,defaultCards[cardFadeIn].text));
-
-    setTimeout(()=>{
-        cardSection.lastElementChild.classList.add('fade');
-    },50);
-    
+    cardCreator(defaultCards[cardFadeIn].title,defaultCards[cardFadeIn].link,defaultCards[cardFadeIn].text);
     cardFadeIn++;
+
+    // quand on a fait toutes les default cards on arrete l'interval
     if(cardFadeIn == defaultCards.length){
         clearInterval(interval);
     }
+
+// durée avant que la fonction se repete (en ms)
 },400);
 
 
-
-// defaultCards.forEach(card => {
-//     cardSection.insertAdjacentHTML("beforeend", cardCreator(card.title,card.link,card.text));
-// });
 
 theme.forEach(item => {
     item.addEventListener('click', e => {
@@ -83,22 +79,31 @@ form.addEventListener('submit', e =>{
     e.preventDefault();
     
     // creates a new card each time we click on submit
-    cardSection.insertAdjacentHTML("beforeend", cardCreator(e.target['titre-projet'].value,e.target['lien-projet'].value,e.target['text-projet'].value));
+    cardCreator(e.target['titre-projet'].value,e.target['lien-projet'].value,e.target['text-projet'].value);
 
     //empty form fields
     e.target['titre-projet'].value = e.target['lien-projet'].value = e.target['text-projet'].value = '';
 });
 
 // returns a card html code => one place to change all cards
+// modifié => ajoute la carte, il suffit d'appeler la fonction
 function cardCreator(title, link, text) {
-    return `
+    const el = cardSection.childElementCount;
+    cardSection.insertAdjacentHTML("beforeend", `
     <div class="carte themed">
         <h3 class="carte__titre center">${title}</h3>
         <img class="carte__image" src="${link}" />
         <p class="carte__texte center">${text}</p>
         <i class="fa-solid fa-trash-can"></i>
-    </div>
-    `;
+    </div>`);
+
+    //fais apparaitre la carte avec transition
+    //la fonction s'execute immédiatement (argument 0 apres la fonction défini la durée avant l'execution de la fonction)
+    //sans le setTimeout le systeme va trop vite pour la transition et donc la carte apparait direct
+    setTimeout(()=>{
+        // cardSection.lastElementChild.classList.add('fade');
+        cardSection.children[el].classList.add('fade');
+    },0);
 };
 function deleteCard(event) {
     // si on tombe sur l element card (donc une carte)
