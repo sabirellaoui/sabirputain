@@ -7,7 +7,7 @@ const theme = document.querySelectorAll('.theme');
 const themed = document.querySelectorAll('.themed');
 const cartes = document.querySelectorAll('.carte');
 
-
+// localStorage.clear();
 // default card been put here
 const defaultCards = [
     {
@@ -32,15 +32,33 @@ link:'images/illustration-amazon-logo-flat-design-simple-illustration-amazon-log
 text:'premier projet js avec amazon'
     }];
 
+let cards = [];
+
+// si il y a 'cards' en mémoire et que 'cards' n'est pas vide
+// donc, si on supprime toutes les cartes => retour de la liste par defaut
+if(localStorage.getItem('cards') && localStorage.getItem('cards') != '[]'){
+    // prends les cards sauvegardée dans la mémoire
+    cards = JSON.parse(localStorage.getItem('cards'));
+}else{
+    //prends les cards par défaut
+    cards = defaultCards;
+}
+
 // fais apparaitre les default cards 1 après l'autre
 let cardFadeIn = 0;
 const interval = setInterval(function(){
-    cardCreator(defaultCards[cardFadeIn].title,defaultCards[cardFadeIn].link,defaultCards[cardFadeIn].text);
+    cardCreator(cards[cardFadeIn].title,cards[cardFadeIn].link,cards[cardFadeIn].text);
     cardFadeIn++;
 
+    // cards.push({title:cards[cardFadeIn].title,link:cards[cardFadeIn].link,text:cards[cardFadeIn].text});
+
+    // localStorage.setItem('cards', JSON.stringify(cards));
+
     // quand on a fait toutes les default cards on arrete l'interval
-    if(cardFadeIn == defaultCards.length){
+    if(cardFadeIn == cards.length){
         clearInterval(interval);
+        //une fois tout affiché, on sauve la liste
+        saveList();
     }
 
 // durée avant que l'interval se repete (en ms)
@@ -90,7 +108,7 @@ form.addEventListener('submit', e =>{
 function cardCreator(title, link, text) {
     const el = cardSection.childElementCount;
     cardSection.insertAdjacentHTML("beforeend", `
-    <div class="carte themed">
+    <div class="carte themed" id="${el}">
         <h3 class="carte__titre center">${title}</h3>
         <img class="carte__image" src="${link}" />
         <p class="carte__texte center">${text}</p>
@@ -112,11 +130,30 @@ function deleteCard(event) {
         // closest permet de choisir la carte qu on a cliqué la famille
         // déplacé dans le if comme ca, si c'est pas le cas ca fait une opération de moins
         const card = event.target.closest('.carte');
+        
       // Supprimer la carte
       card.remove();
+      // sauve la liste
+      saveList()
     }
   }
-  
   // se declenche lorsqu'on clique dessus
   // modifié => uniquement sur la section cartes
   cardSection.addEventListener('click', deleteCard);
+
+  function saveList(){
+    //on crée un array temporaire
+    let list = [];
+
+    //on pousse toutes les cards dans l'array temporaire sous forme d'objet
+    for(let i =0; i < cardSection.childElementCount; i++){
+        list.push({ //document.querySelector('#cartes')
+        title: cardSection.children[i].querySelector('.carte__titre').innerText,
+        link: cardSection.children[i].querySelector('.carte__image').getAttribute('src'),
+        text: cardSection.children[i].querySelector('.carte__texte').innerText
+        });
+    }
+
+    //on sauve la liste dans la mémoire
+    localStorage.setItem('cards', JSON.stringify(list));
+  };
