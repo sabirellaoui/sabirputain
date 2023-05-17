@@ -118,10 +118,10 @@ button {
 }
 
 #black {
-    position: absolute;
+    /* position: absolute; */
     background-color: black;
-    top: 1cm;
-    left: 1cm;
+    /* top: 1cm;
+    left: 1cm; */
     border-radius: 20px;
     color: aliceblue;
     width: 2cm;
@@ -129,11 +129,11 @@ button {
 }
 
 #salmon {
-    position: absolute;
+    /* position: absolute; */
     border-radius: 20px;
     background-color: blanchedalmond;
-    top: 2cm;
-    left: 1cm;
+    /* top: 2cm;
+    left: 1cm; */
     width: 2cm;
     text-align: center;
 }
