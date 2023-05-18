@@ -7,7 +7,6 @@ const theme = document.querySelectorAll('.theme');
 const themed = document.querySelectorAll('.themed');
 const cartes = document.querySelectorAll('.carte');
 
-// localStorage.clear();
 // default card been put here
 const defaultCards = [
     {
@@ -44,8 +43,20 @@ if(localStorage.getItem('cards') && localStorage.getItem('cards') != '[]'){
     cards = defaultCards;
 }
 
+//3eme methode de declaration de fonction => la position importe 
+//methode d'objet
+// const obj = {
+//     bonjour(){
+//         console.log('bonjour');
+//     }
+// }
+// obj.bonjour();
+
 // fais apparaitre les default cards 1 après l'autre
 let cardFadeIn = 0;
+
+//1ere methode de declarer une fonction => la position a de l'importance (dabord declarer puis appelée)
+//expression de fonction
 const interval = setInterval(function(){
     cardCreator(cards[cardFadeIn].title,cards[cardFadeIn].link,cards[cardFadeIn].text);
     cardFadeIn++;
@@ -63,6 +74,8 @@ const interval = setInterval(function(){
 
 // durée avant que l'interval se repete (en ms)
 },400);
+
+
 
 
 
@@ -118,6 +131,8 @@ form.addEventListener('submit', e =>{
 
 // returns a card html code => one place to change all cards
 // modifié => ajoute la carte, il suffit d'appeler la fonction
+//2eme methode de declaration de fonction => la position n'importe pas
+//déclaration de fonction
 function cardCreator(title, link, text) {
     const el = cardSection.childElementCount;
     cardSection.insertAdjacentHTML("beforeend", `
