@@ -108,12 +108,18 @@ window.addEventListener("load", ()=>{
 form.addEventListener('submit', e =>{
     // prevents form button from reloading the page
     e.preventDefault();
+    const titre = e.target['titre-projet'].value;
+    const text = e.target["text-projet"].value;
+
 
     
     //if la valeur du champs titre , lien et texte n'est pas vide
-    if (e.target['titre-projet'].value != "" && e.target['lien-projet'].value != "" && e.target["text-projet"].value != "") { 
+    if (titre != "" && text != "") { 
+        
+        const link = e.target['lien-projet'].value || 'https://picsum.photos/400/300';
+
         // creates a new card each time we click on submit
-        cardCreator(e.target['titre-projet'].value,e.target['lien-projet'].value,e.target['text-projet'].value);
+        cardCreator(titre,link,text);
 
 
         //empty form fields
