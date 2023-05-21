@@ -99,6 +99,8 @@ theme.forEach(item => {
     });
 });
 
+
+
 window.addEventListener("load", ()=>{
     titre.classList.add("fade-in");
 });
@@ -115,6 +117,12 @@ form.addEventListener('submit', e =>{
     
     //if la valeur du champs titre , lien et texte n'est pas vide
     if (titre != "" && text != "") { 
+
+        //TODO: ajouter fetch avec l'API lien pour avoir un lien vers une image permanent
+        // exemple:
+        // fetch('https://picsum.photos/400/300').then(data=>{
+        //     console.log(data);
+        // }).catch(err => console.log(err));
         
         const link = e.target['lien-projet'].value || 'https://picsum.photos/400/300';
 
@@ -128,6 +136,8 @@ form.addEventListener('submit', e =>{
     };
 });
 
+
+
 // returns a card html code => one place to change all cards
 // modifié => ajoute la carte, il suffit d'appeler la fonction
 //2eme methode de declaration de fonction => la position n'importe pas
@@ -135,12 +145,18 @@ form.addEventListener('submit', e =>{
 function cardCreator(title, link, text) {
     const el = cardSection.childElementCount;
     cardSection.insertAdjacentHTML("beforeend", `
-    <div class="carte themed" id="${el}">
+    <div class="carte themed" draggable='true' id="${el}">
         <h3 class="carte__titre center">${title}</h3>
         <img class="carte__image" src="${link}" />
         <p class="carte__texte center">${text}</p>
         <i class="fa-solid fa-trash-can"></i>
     </div>`);
+
+    const card = document.querySelector('.cartes').lastElementChild;
+    card.addEventListener('dragstart', dragStart);
+    card.addEventListener('dragend', dragEnd);
+    card.addEventListener('dragenter', dragEnter);
+    card.addEventListener('dragleave', dragLeave);
 
     //fais apparaitre la carte avec transition
     //la fonction s'execute immédiatement (argument 0 apres la fonction défini la durée avant l'execution de la fonction)
@@ -184,3 +200,29 @@ function deleteCard(event) {
     //on sauve la liste dans la mémoire
     localStorage.setItem('cards', JSON.stringify(list));
   };
+
+
+
+// tuto drag & drop: https://stackabuse.com/drag-and-drop-in-vanilla-javascript/
+let dragging = null;
+  function dragStart() {
+    // console.log('drag started', this);
+    dragging = this;
+    setTimeout(()=> this.classList.add('invisible'), 0);
+}
+function dragEnd() {
+    // console.log('drag ended', this);
+    dragging = null;
+    setTimeout(()=> this.classList.remove('invisible'), 0);
+}
+function dragEnter() {
+    console.log('drag enter', this);
+    if(dragging){
+        dragging.parentNode.insertBefore(dragging, this.nextElementSibling);
+    }
+    // document.getElementById('0').parentNode.insertBefore(document.getElementById('0'), document.getElementById('3'));
+    
+}
+function dragLeave() {
+    console.log('drag leave', this);
+}

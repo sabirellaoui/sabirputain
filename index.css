@@ -57,6 +57,12 @@ h1 {
 }
 /**l image va a la ligne si besoin**/
 
+.invisible{
+    /* display:none !important; */
+    transition: opacity 0s !important; 
+    opacity: 0 !important;
+}
+
 
 .carte {
     opacity:0;
@@ -68,6 +74,7 @@ h1 {
     border: 1px solid salmon;
     border-radius: 10px;
     margin: 10px;
+    transition: all 0.5s;
 }
 .carte:hover {
     box-shadow: 2px 2px 20px #080808;
