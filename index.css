@@ -52,6 +52,10 @@ textarea {
 .center{
     text-align: center;
 }
+.dragging{
+    /* position: absolute; */
+    transition: all 0s;
+}
 .fa-trash-can{
     text-align: right;
     width: 1rem;
