@@ -1,11 +1,13 @@
 const body = document.querySelector('body');
 const form = document.querySelector('#formulairenew');
 const cardSection = document.querySelector('#cartes');
-const titre = document.querySelector("h1");
+const titre = document.querySelector(".projet__titre");
 const theme = document.querySelectorAll('.theme');
 // themed class on all element that follow the theme
 const themed = document.querySelectorAll('.themed');
 const cartes = document.querySelectorAll('.carte');
+
+
 
 // default card been put here
 const defaultCards = [
@@ -101,9 +103,7 @@ theme.forEach(item => {
 
 
 
-window.addEventListener("load", ()=>{
-    titre.classList.add("fade-in");
-});
+
 
 
 // executes the function when submitting the form
@@ -160,7 +160,7 @@ form.addEventListener('submit', e =>{
 function cardCreator(title, link, text) {
     const el = cardSection.childElementCount;
     cardSection.insertAdjacentHTML("beforeend", `
-    <div class="carte themed" draggable='true' id="${el}">
+    <div class="carte themed faded" draggable='true' id="${el}">
         <h3 class="carte__titre center">${title}</h3>
         <img class="carte__image" src="${link}" />
         <p class="carte__texte center">${text}</p>
@@ -177,9 +177,8 @@ function cardCreator(title, link, text) {
     //la fonction s'execute immédiatement (argument 0 apres la fonction défini la durée avant l'execution de la fonction)
     //sans le setTimeout le systeme va trop vite pour la transition et donc la carte apparait direct
     setTimeout(()=>{
-        // cardSection.lastElementChild.classList.add('fade');
-        cardSection.children[el].classList.add('fade');
-    },0);
+        cardSection.children[el].classList.remove('faded');
+    },10);
     saveList();
 };
 function deleteCard(event) {
@@ -242,3 +241,8 @@ function dragEnter() {
 function dragLeave() {
     console.log('drag leave', this);
 }
+window.addEventListener("load", ()=>{
+    setTimeout(()=>{
+    titre.classList.remove("faded");
+    },0)
+});

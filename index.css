@@ -1,75 +1,35 @@
+/* CSS SUR DES TAGS */
+
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: snow;
 }
-
-#text-projet{
-     resize: none;
-width: 20rem;
-height: 5rem;
-}
-
-.center{
-    text-align: center;
-}
-
-h1 {
-    /* text-align: center; */
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  font-size: 50px;
-}
-
-.fa-trash-can{
-    text-align: right;
-    width: 1rem;
-    height: 1rem;
-    margin: 0px 1rem 1rem auto
-}
-
-.fa-trash-can:hover{
-    font-size: 150%;
-}
-
-/* h3 {
-    text-align: center;
-} */
-
-/* .carte__texte {
-    text-align: center;
+input {
+    border-radius: 45%;
+    padding: 15px;
+    margin-top: 10px;
     
-} */
-
-
-
-
-
-.projet {
-    width: 80%;
-    margin: auto;
 }
-
-.cartes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+label {
+    font-size: 20px;
 }
-/**l image va a la ligne si besoin**/
-
-.invisible{
-    /* display:none !important; */
-    transition: opacity 0s !important; 
-    opacity: 0 !important;
+textarea {
+    border-radius: 45%;
+    padding: 30px;
+    margin-top: 10px;
 }
 
 
+
+
+/* CSS SUR DES CLASSES */
+.black {
+    background-color: black;
+    color: aliceblue;
+}
 .carte {
-    opacity:0;
     transition: opacity 1s; 
     display: flex;
     flex-direction: column;
-    /* align-item: center; */
     width: 30%;
     border: 1px solid salmon;
     border-radius: 10px;
@@ -80,30 +40,49 @@ h1 {
     box-shadow: 2px 2px 20px #080808;
     transform: translateY(-5px);
 }
-
 .carte__texte {
     text-align: center;
 }
-
-.formulaire {
-    width: 700px;
-    height: 480px;
-    margin:auto;
-    background-color: rgb(104, 128, 159);
-    border-radius: 50%;
-    
-}
-
-/* .forumulairenew__input, .forumulairenew__textarea {
+.cartes {
     display: flex;
     flex-direction: row;
-    margin: 1cm;
-} */
-
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.center{
+    text-align: center;
+}
+.fa-trash-can{
+    text-align: right;
+    width: 1rem;
+    height: 1rem;
+    margin: 0px 1rem 1rem auto
+}
+.fa-trash-can:hover{
+    font-size: 150%;
+}
+.faded{
+    opacity: 0;
+}
+.formulaire {
+    max-width: 700px;
+    margin: 2rem auto;
+    background-color: rgb(104, 128, 159);
+    border-radius: 20%;
+}
+.formulaire__bouton{
+    /* width: 100px; */
+    margin: auto 2rem;
+    margin-left: 43%;
+    border-radius:20% ;
+    
+}
 .forumulairenew__textarea {
     margin-top: 2rem;
 }
-
+.formulaire__titre{
+    padding-top: 2rem;
+}
 .forumulairenew__inputtext input {
     margin-left: 1em;
 }
@@ -111,81 +90,50 @@ h1 {
     text-align: center;
     margin: 1em auto;
 }
-
-
 .forumulairenew__inputlien input {
     margin-left: 1em;
 }
 .forumulairenew__inputlien{
     text-align: center;
 }
-
-input {
-    border-radius: 45%;
-    padding: 15px;
-    margin-top: 10px;
-    
+.invisible{
+    transition: opacity 0s !important; 
+    opacity: 0 !important;
 }
-textarea {
-    border-radius: 45%;
-    padding: 30px;
-    margin-top: 10px;
+.projet__titre{
+  transition: opacity 2s ease-in-out;
+  font-size: 3rem;
 }
-
-
-button {
-    width: 100px;
-    margin-left: 43.5%;
-    border-radius:45% ;
+.projet{
+    width: 80%;
+    margin: auto;
 }
-
-#black {
-    /* position: absolute; */
-    background-color: black;
-    /* top: 1cm;
-    left: 1cm; */
-    border-radius: 20px;
-    color: aliceblue;
-    width: 2cm;
-    text-align: center;
-}
-
-#salmon {
-    /* position: absolute; */
-    border-radius: 20px;
-    background-color: blanchedalmond;
-    /* top: 2cm;
-    left: 1cm; */
-    width: 2cm;
-    text-align: center;
-}
-
-.black {
-    background-color: black;
-    color: aliceblue;
-}
-
 .salmon {
     background-color: blanchedalmond;
 }
-
-.fade-in {
-    opacity: 1;
-    transition: opacity 1s; 
+.text-projet{
+    resize: none;
+    width: 50%;
+    height: 5rem;
 }
-.fade {
-    opacity: 1;
-}
-
-label {
-    font-size: 20px;
-   
-    
-
-   
-}
-
-
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.theme-btn{
+    border-radius: 20px;
+    width: 2cm;
+    text-align: center;
+}
+
+
+
+
+/* CSS SUR DES ID */
+#black {
+    background-color: black;
+    color: aliceblue;
+}
+#salmon {
+    background-color: blanchedalmond;
+    color: black;
 }
