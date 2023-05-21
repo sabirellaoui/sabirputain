@@ -122,19 +122,34 @@ form.addEventListener('submit', e =>{
         // exemple:
         // fetch('https://picsum.photos/400/300').then(data=>{
         //     console.log(data);
-        // }).catch(err => console.log(err));
-        
-        const link = e.target['lien-projet'].value || 'https://picsum.photos/400/300';
+        // }).catch(err => console.log(err));µ
+        let link = e.target['lien-projet'].value;
 
-        // creates a new card each time we click on submit
-        cardCreator(titre,link,text);
+        if (link){
+            link = e.target['lien-projet'].value;
+            // creates a new card each time we click on submit
+            cardCreator(titre,link,text);
+        }else{
+            fetch('https://picsum.photos/400/300')
+            .then(data=>{
+                link = data.url;
+                cardCreator(titre,link,text);
+            })
+            .catch(err => console.log(err));
+        }
+
+        
+        
+
 
 
         //empty form fields
-        e.target['titre-projet'].value = e.target['lien-projet'].value = e.target['text-projet'].value = ''; 
+        e.target.reset();
             
     };
 });
+
+
 
 
 
@@ -165,6 +180,7 @@ function cardCreator(title, link, text) {
         // cardSection.lastElementChild.classList.add('fade');
         cardSection.children[el].classList.add('fade');
     },0);
+    saveList();
 };
 function deleteCard(event) {
     // si on tombe sur l element card (donc une carte)
@@ -177,7 +193,7 @@ function deleteCard(event) {
       // Supprimer la carte
       card.remove();
       // sauve la liste
-      saveList()
+      saveList();
     }
   }
   // se declenche lorsqu'on clique dessus
