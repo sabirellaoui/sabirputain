@@ -20,19 +20,16 @@ function dragEnd() {
 function dragEnter() {
     if(dragging && this.classList.contains('carte')){
         console.log(this);
-        // dragging.parentNode.insertBefore(dragging, this.nextElementSibling);
         if(this.id < dragging.id){
             dragging.parentNode.insertBefore(dragging, this);
         }else if(this.id > dragging.id){
             dragging.parentNode.insertBefore(dragging, this.nextElementSibling);
         }
     }
-    // document.getElementById('0').parentNode.insertBefore(document.getElementById('0'), document.getElementById('3'));
 }
 
 
 function dragLeave() {
-    // console.log('drag leave', this);
     for(i=0; i< cardSection.childElementCount; i++){
         cardSection.children[i].id = i;
     }
