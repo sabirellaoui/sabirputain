@@ -4,17 +4,17 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 input {
-    border-radius: 45%;
-    padding: 15px;
+    
     margin-top: 10px;
+    
     
 }
 label {
     font-size: 20px;
+    
 }
 textarea {
-    border-radius: 45%;
-    padding: 30px;
+    
     margin-top: 10px;
 }
 
@@ -71,14 +71,14 @@ textarea {
 .formulaire {
     max-width: 700px;
     margin: 2rem auto;
-    background-color: rgb(104, 128, 159);
-    border-radius: 20%;
+    border: 1px solid red;
+   
 }
 .formulaire__bouton{
     /* width: 100px; */
     margin: auto 2rem;
-    margin-left: 43%;
-    border-radius:20% ;
+   
+    margin-left: 47%;
     
 }
 .forumulairenew__textarea {
@@ -120,9 +120,6 @@ textarea {
     width: 50%;
     height: 5rem;
 }
-.text-shadow {
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
 .theme-btn{
     border-radius: 20px;
     width: 2cm;
@@ -140,4 +137,8 @@ textarea {
 #salmon {
     background-color: blanchedalmond;
     color: black;
+}
+
+.red{
+    color: red;
 }

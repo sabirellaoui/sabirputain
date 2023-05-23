@@ -6,6 +6,9 @@ const theme = document.querySelectorAll('.theme');
 // themed class on all element that follow the theme
 const themed = document.querySelectorAll('.themed');
 const cartes = document.querySelectorAll('.carte');
+//variable formulaire pour que la couleur du form change avec le theme ta3 zobi
+const forme = document.querySelector('.formulaire');
+const titref = document.querySelector('.formulaire__titre');
 
 
 // executes the function when submitting the form
