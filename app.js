@@ -46,6 +46,8 @@ form.addEventListener('submit', e =>{
   // modifié => uniquement sur la section cartes
 cardSection.addEventListener('click', deleteCard);
 
+cardSection.addEventListener('click', playSound);
+
 // const carte = document.querySelectorAll('.carte');
 
 // cartes.addEventListener("click", () =>{

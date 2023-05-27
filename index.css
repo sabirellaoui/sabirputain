@@ -75,12 +75,14 @@ h3 {
 .formulaire {
     max-width: 700px;
     margin: 2rem auto;
-    border: 1px solid red;
+    border: 1px solid salmon;
+    border-radius: 10px;
    
 }
 .formulaire__bouton{
     /* width: 100px; */
     margin: auto 2rem;
+    margin-bottom: 1rem;
    
     margin-left: 47%;
     

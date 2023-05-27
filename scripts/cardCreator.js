@@ -18,11 +18,7 @@ function cardCreator(title, link, text) {
     card.addEventListener('dragenter', dragEnter);
     card.addEventListener('dragleave', dragLeave);
 
-    card.addEventListener('click', () => {
-        console.log('e') 
-        const bassem = document.querySelector(".mp3-bassem");
-        bassem.play();
-    } );
+
 
     //fais apparaitre la carte avec transition
     //la fonction s'execute immédiatement (argument 0 apres la fonction défini la durée avant l'execution de la fonction)
