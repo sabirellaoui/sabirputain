@@ -20,8 +20,8 @@ if(localStorage.getItem('cards') && localStorage.getItem('cards') != '[]'){
 // }
 // obj.bonjour();
 
-cardsFadeIn();
-function cardsFadeIn(){
+cardsFadeIn(cards);
+function cardsFadeIn(cards){
 
     // fais apparaitre les default cards 1 après l'autre
     let cardFadeIn = 0;

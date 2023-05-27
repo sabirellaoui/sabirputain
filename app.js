@@ -9,6 +9,7 @@ const cartes = document.querySelectorAll('.carte');
 //variable formulaire pour que la couleur du form change avec le theme ta3 zobi
 const forme = document.querySelector('.formulaire');
 const titref = document.querySelector('.formulaire__titre');
+const reloadButton = document.querySelector('.fa-rotate-right');
 
 
 // executes the function when submitting the form
@@ -47,6 +48,15 @@ form.addEventListener('submit', e =>{
 cardSection.addEventListener('click', deleteCard);
 
 cardSection.addEventListener('click', playSound);
+
+reloadButton.addEventListener('mouseover', e=>{
+    e.target.classList.add('fa-spin');
+});
+reloadButton.addEventListener('mouseout', e=>{
+    e.target.classList.remove('fa-spin');
+});
+reloadButton.addEventListener('click', resetCards);
+
 
 // const carte = document.querySelectorAll('.carte');
 
