@@ -11,8 +11,10 @@ function cardCreator(title, link, text) {
             <img class="carte__image" src="${link}" /> 
         </a>
         <p class="carte__texte center">${text}</p>
-        <i class="fa-solid fa-music"></i>
-        <i class="fa-solid fa-trash-can"></i>
+        <div class="icons-box">
+            <i class="fa-solid fa-music"></i>
+            <i class="fa-solid fa-trash-can"></i>
+        </div>
     </div>`);
 
     const card = document.querySelector('.cartes').lastElementChild;
