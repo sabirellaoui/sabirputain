@@ -20,21 +20,25 @@ if(localStorage.getItem('cards') && localStorage.getItem('cards') != '[]'){
 // }
 // obj.bonjour();
 
-// fais apparaitre les default cards 1 après l'autre
-let cardFadeIn = 0;
+cardFadeIn();
+function cardFadeIn(){
 
-//1ere methode de declarer une fonction => la position a de l'importance (dabord declarer puis appelée)
-//expression de fonction
-const interval = setInterval(function(){
-    cardCreator(cards[cardFadeIn].title,cards[cardFadeIn].link,cards[cardFadeIn].text);
-    cardFadeIn++;
-
-    // quand on a fait toutes les default cards on arrete l'interval
-    if(cardFadeIn == cards.length){
-        clearInterval(interval);
-        //une fois tout affiché, on sauve la liste
-        saveList();
-    }
-
-// durée avant que l'interval se repete (en ms)
-},400);
+    // fais apparaitre les default cards 1 après l'autre
+    let cardFadeIn = 0;
+    
+    //1ere methode de declarer une fonction => la position a de l'importance (dabord declarer puis appelée)
+    //expression de fonction
+    const interval = setInterval(function(){
+        cardCreator(cards[cardFadeIn].title,cards[cardFadeIn].link,cards[cardFadeIn].text);
+        cardFadeIn++;
+    
+        // quand on a fait toutes les default cards on arrete l'interval
+        if(cardFadeIn == cards.length){
+            clearInterval(interval);
+            //une fois tout affiché, on sauve la liste
+            saveList();
+        }
+    
+    // durée avant que l'interval se repete (en ms)
+    },400);
+}
