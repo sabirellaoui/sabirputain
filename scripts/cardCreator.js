@@ -7,7 +7,9 @@ function cardCreator(title, link, text) {
     cardSection.insertAdjacentHTML("beforeend", `
     <div class="carte themed faded" draggable='true' id="${el}">
         <h3 class="carte__titre center">${title}</h3>
-        <img class="carte__image" src="${link}" />
+        <a href="projet_de_largent\\ARGENT\\index.html">
+            <img class="carte__image" src="${link}" /> 
+        </a>
         <p class="carte__texte center">${text}</p>
         <i class="fa-solid fa-trash-can"></i>
     </div>`);

@@ -23,6 +23,10 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* .carte a {
+    width: 100%;
+} */
+
 
 
 /* CSS SUR DES CLASSES */
@@ -40,10 +44,18 @@ h3 {
     margin: 10px;
     transition: all 0.5s;
 }
+
+.carte__image {
+    width: 100%;
+
+}
+
+
 .carte:hover {
     box-shadow: 2px 2px 20px #080808;
     transform: translateY(-5px);
 }
+
 .carte__texte {
     text-align: center;
 }
@@ -130,7 +142,10 @@ h3 {
     border-radius: 20px;
     width: 2cm;
     text-align: center;
+
 }
+
+
 
 
 
