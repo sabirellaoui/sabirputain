@@ -21,6 +21,18 @@ textarea {
 
 h3 {
     font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+}
+
+p {
+    color: blue;
+}
+
+h1 {
+    color: rgb(216, 26, 147);
+    font-style: bold;
+    text-align: center;
+    
 }
 
 /* .carte a {
