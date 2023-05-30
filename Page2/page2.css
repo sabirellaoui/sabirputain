@@ -9,3 +9,22 @@ h1{
     color: red;
     text-align: center;
 }
+
+.black{
+    padding-left: 0%;
+    padding-top: 0px;
+    color:aliceblue;
+}
+.salmon {
+    padding-left: 0%;
+    padding-top: 10px;
+    color:aliceblue;
+}
+
+.blackk {
+    background-color: white;
+
+}
+.salmonn{
+    background-color: salmon;
+}
