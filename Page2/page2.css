@@ -2,7 +2,8 @@ body{
     padding-top: 100px;
     padding-left: 170px;
     padding-right: 170px;
-   background-color: black;
+    
+
 }
 h1{
     font-style: oblique;
@@ -13,18 +14,29 @@ h1{
 .black{
     padding-left: 0%;
     padding-top: 0px;
-    color:aliceblue;
+    color:rgb(0, 4, 8);
 }
 .salmon {
     padding-left: 0%;
     padding-top: 10px;
-    color:aliceblue;
+    color:rgb(0, 2, 3);
 }
 
 .blackk {
-    background-color: white;
+    background-color: rgb(3, 0, 0);
 
 }
 .salmonn{
     background-color: salmon;
 }
+
+.blue{
+    background-color: rgb(43, 34, 205);
+}
+
+.cercle {
+    width: 0.5cm;
+    height: 0.5cm;
+    border-radius: 50%;
+    background: conic-gradient(red 0deg, red 120deg, green 120deg, green 240deg, blue 240deg);
+  }
